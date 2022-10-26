@@ -10,7 +10,7 @@ export default function HomePage() {
       <Container>
         <HomePageContent>
           <h1>Welcome to Github Explore</h1>
-          <p>You are free to search for a Github profle</p>
+          <p>Feel free to search for any Github profile</p>
         </HomePageContent>
         <Sidebar />
       </Container>
@@ -19,7 +19,6 @@ export default function HomePage() {
 }
 
 const Container = styled.section`
-  background-color: #4d5962;
   display: flex;
   position: relative;
   margin-top: 100px;
@@ -27,5 +26,19 @@ const Container = styled.section`
 `
 
 const HomePageContent = styled.div`
-  
+  background-color: var(--page-background);
+  width: calc(100vw - 300px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  h1{
+    margin-top: 250px;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  p{
+    margin-top: 20px;
+    font-size: 40px;
+  }
 `

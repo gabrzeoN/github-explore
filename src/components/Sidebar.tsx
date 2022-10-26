@@ -10,19 +10,22 @@ export default function Sidebar(){
 }
 
 const Container = styled.section`
-  background-color: #366e9f;
+  background-color: var(--sidebar-background);
   width: 300px;
   display: flex;
+  justify-content: center;
   position: absolute;
   top: 0px;
   bottom: 0px;
   right: 0px;
+  box-shadow: -12px 9px 34px -2px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -12px 9px 34px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: -12px 9px 34px -2px rgba(0,0,0,0.75);
 `;
 
-const Title = styled.h1`
+const Title = styled.h2`
   display: flex;
-  img{
-    width: 100px;
-
-  }
+  font-size: 30px;
+  margin-top: 20px;
+  text-decoration: underline;
 `;

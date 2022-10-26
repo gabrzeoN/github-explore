@@ -1,7 +1,12 @@
 import api from "./api";
 
-const getGithubProfile = (username: string) => {
+const get = (username: string) => {
   const profile = api.get(`/${username}`);
+  return profile;
 }
 
-export default getGithubProfile;
+const githubProfile = {
+  get
+}
+
+export default githubProfile;
