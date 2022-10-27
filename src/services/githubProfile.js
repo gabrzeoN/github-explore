@@ -1,6 +1,6 @@
 import api from "./api";
 
-const get = (username: string) => {
+const get = (username) => {
   const profile = api.get(`/${username}`);
   return profile;
 }

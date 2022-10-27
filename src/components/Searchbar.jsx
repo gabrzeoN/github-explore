@@ -1,20 +1,28 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import githubProfile from "../services/githubProfile";
+import { UserContext } from "../contexts/UserContext";
 
 export default function Searchbar(){
   const [username, setUsername] = useState("");
   const [disabled, setDisabled] = useState(false);
+  const { setUser} = useContext(UserContext);
+  const navigate = useNavigate();
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e) {
     e.preventDefault();
     setDisabled(true);
     try {
       const { data } = await githubProfile.get(username);
       console.log(data)
-      setDisabled(false);
-    } catch (error: any) {
+      localStorage.setItem("githubexplore_user", JSON.stringify(data));
+      setUser({...data})
+      navigate(`/${data.login}`)
+    } catch (error) {
       console.log(error.response.data);
+      alert("Profile not found!");
+    } finally{
       setDisabled(false);
     }
 }
