@@ -26,7 +26,7 @@ export default function Repositories() {
   }
 
   return (
-    <>
+    <Container>
       {
         repositories ?
           repositories.map((repo, i) => {
@@ -35,6 +35,10 @@ export default function Repositories() {
           :
           <h1>Não ha repositorio</h1>
       }
-    </>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  margin: 100px;
+`;

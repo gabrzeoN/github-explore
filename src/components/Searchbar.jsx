@@ -6,7 +6,7 @@ import { UserContext } from "../contexts/UserContext";
 import githubRepo from "../services/githubRepo";
 
 
-export default function Searchbar(){
+export default function Searchbar() {
   const [disabled, setDisabled] = useState(false);
   const { setUser } = useContext(UserContext);
   const [username, setUsername] = useState("");
@@ -16,21 +16,21 @@ export default function Searchbar(){
     e.preventDefault();
     setDisabled(true);
     try {
-      const { data: user } = await githubProfile.get(username);
-      localStorage.setItem("githubexplore_user", JSON.stringify(user));
-      setUser({...user});
-      navigate(`/${user.login}`);
+      const { data } = await githubProfile.get(username);
+      localStorage.setItem("githubexplore_user", JSON.stringify(data));
+      setUser({ ...data });
+      navigate(`/${data.login}`);
     } catch (error) {
       console.log(error.response.data);
       alert("Profile not found!");
-    } finally{
+    } finally {
       setDisabled(false);
     }
-}
+  }
 
-  return(
+  return (
     <Container onSubmit={handleSubmit}>
-      <input 
+      <input
         type="text"
         placeholder="Insert a profile"
         value={username}

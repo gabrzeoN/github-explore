@@ -1,19 +1,32 @@
 import styled from "styled-components";
-
+import githubProfile from "../services/githubProfile";
+import { useNavigate } from "react-router-dom";
 
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
 
-export default function Profile({ favorite, removeFav }){
-  const { user, favorites, setFavorites } = useContext(UserContext);
+export default function Profile({ favorite }){
+  const { user, setUser, favorites, setFavorites } = useContext(UserContext);
   const { name, login, avatar_url, location, bio, followers, following, public_repos } = user;
+  const navigate = useNavigate();
 
+  async function goToProfile() {
+    try {
+      const { data } = await githubProfile.get(favorite.login);
+      localStorage.setItem("githubexplore_user", JSON.stringify(data));
+      setUser({ ...data });
+      navigate(`/${data.login}`);
+    } catch (error) {
+      console.log(error.response.data);
+      alert("Profile not found!");
+    }
+  }
 
   return(
-    <Container>
+    <Container onClick={() => goToProfile()}>
       <Avatar src={favorite.avatar_url} alt="favorite_profile" />
       <Username>{favorite.login}</Username>
-      <Remove onClick={() => removeFav()}></Remove>
+      <Detail ></Detail>
     </Container>
   );
 }
@@ -43,7 +56,7 @@ const Username = styled.h1`
   font-size: 20px;
 `;
 
-const Remove = styled.div`
+const Detail = styled.div`
   width: 25px;
   height: 100%;
   background-color: var(--favorite-button-active);
