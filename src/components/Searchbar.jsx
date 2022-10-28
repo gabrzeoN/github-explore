@@ -5,10 +5,11 @@ import githubProfile from "../services/githubProfile";
 import { UserContext } from "../contexts/UserContext";
 import githubRepo from "../services/githubRepo";
 
+
 export default function Searchbar(){
-  const [username, setUsername] = useState("");
   const [disabled, setDisabled] = useState(false);
-  const { setUser, setRepositories} = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
+  const [username, setUsername] = useState("");
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
@@ -16,11 +17,8 @@ export default function Searchbar(){
     setDisabled(true);
     try {
       const { data: user } = await githubProfile.get(username);
-      const { data: repositories } = await githubRepo.get(username);
       localStorage.setItem("githubexplore_user", JSON.stringify(user));
-      localStorage.setItem("githubexplore_repositories", JSON.stringify(repositories));
       setUser({...user});
-      setRepositories([...repositories]);
       navigate(`/${user.login}`);
     } catch (error) {
       console.log(error.response.data);

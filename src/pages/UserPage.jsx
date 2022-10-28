@@ -1,5 +1,6 @@
 
 import styled from "styled-components";
+import { useState } from "react";
 
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
@@ -13,7 +14,7 @@ export default function UserPage() {
       <Header />
       <Container>
         <UserPageContent>
-          <UserInfo />
+          <UserInfo/>
           <Repositories />
         </UserPageContent>
         <Sidebar />

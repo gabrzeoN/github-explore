@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import Profiles from "./Profiles";
 
 export default function Sidebar(){
   return(
     <Container>
       <Title>FAVORITES</Title>
-
+      <Profiles/>
     </Container>
   );
 }
@@ -13,7 +14,8 @@ const Container = styled.section`
   background-color: var(--sidebar-background);
   width: 300px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   top: 0px;
   bottom: 0px;

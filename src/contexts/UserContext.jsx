@@ -4,10 +4,15 @@ export const UserContext = createContext();
 
 export function UserProvider({ children }) {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("githubexplore_user")));
-  const [repositories, setRepositories] = useState(JSON.parse(localStorage.getItem("githubexplore_repositories")));
+  const [favorites, setFavorites] = useState([]);
 
   return (
-    <UserContext.Provider value={{ user, setUser, repositories, setRepositories }}>
+    <UserContext.Provider value={{
+        user,
+        setUser,
+        favorites,
+        setFavorites
+      }}>
       {children}
     </UserContext.Provider>
   );

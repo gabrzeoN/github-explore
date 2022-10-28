@@ -1,11 +1,13 @@
 import styled from "styled-components";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
+import FavoriteButton from "./FavoriteButton";
 import { UserContext } from "../contexts/UserContext";
 
 export default function UserInfo() {
   const { user } = useContext(UserContext);
   const { name, login, avatar_url, location, bio, followers, following, public_repos } = user;
+
 
   return (
     <Container>
@@ -20,7 +22,7 @@ export default function UserInfo() {
           <h5>public repositories: {public_repos}</h5>
         </Additionals>
       </Infos>
-      <Favorite/>
+      <FavoriteButton/>
     </Container>
   );
 }
@@ -39,7 +41,6 @@ const Avatar = styled.img`
 `;
 
 const Infos = styled.div`
-  /* background-color: white; */
   width: 60%;
   padding: 0px 20px;
   position: relative;
@@ -91,8 +92,3 @@ const Additionals = styled.div`
   }
 `;
 
-const Favorite = styled.button`
-  width: 10%;
-  border: 1px solid black;
-  border-radius: 0px 0px 50px 50px;
-`;
