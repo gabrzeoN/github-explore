@@ -38,4 +38,5 @@ const UserPageContent = styled.div`
   justify-content: flex-start;
   align-items: center;
   user-select: none;
+  overflow-y: auto;
 `

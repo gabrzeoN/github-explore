@@ -23,17 +23,29 @@ export default function FavoriteButton() {
     setIsFav(false);
   };
 
-  function addFav() {
+  function removeFav() {
+    const newFav = favorites?.filter((fav) => {
+      if(fav.login !== user.login) return true;
+    });
+    setFavorites([...newFav]);
+    setIsFav(false);
+  }
+
+  function toggleFav() {
     if (isFav) {
-      alert("This profile is already one of your favorites!");
+      removeFav();
       return;
     }
+    addFav();
+  }
+
+  function addFav(){
     setFavorites([...favorites, { login: user.login, avatar_url: user.avatar_url }]);
     setIsFav(true);
   }
 
   return (
-    <Container onClick={() => addFav()} isFav={isFav} >
+    <Container onClick={() => toggleFav()} isFav={isFav} >
       {
         isFav?
         <StarIcon sx={{ fontSize: 100, color: "yellow" }} />

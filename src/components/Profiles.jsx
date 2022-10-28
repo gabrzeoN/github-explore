@@ -7,14 +7,6 @@ import Profile from "./Profile";
 export default function Profiles() {
   const { user, favorites, setFavorites } = useContext(UserContext);
 
-  function removeFav() {
-    const newFav = favorites?.filter((fav) => {
-      if(fav.login !== user.login) return true;
-    });
-    setFavorites([...newFav]);
-    console.log(newFav);
-  }
-
   return (
     <Container>
       {
@@ -22,7 +14,7 @@ export default function Profiles() {
           <h1>No favorites yet!</h1>
           :
           favorites.map((fav, i) => {
-            return <Profile key={i} favorite={fav} removeFav={removeFav} />
+            return <Profile key={i} favorite={fav} />
           })
       }
     </Container>
@@ -31,4 +23,10 @@ export default function Profiles() {
 
 const Container = styled.div`
   width: 250px;
+  h1:first-child{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    margin-top: 100px;
+  }
 `;

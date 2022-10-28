@@ -24,6 +24,7 @@ const Container = styled.section`
   -webkit-box-shadow: -12px 9px 34px -2px rgba(0,0,0,0.75);
   -moz-box-shadow: -12px 9px 34px -2px rgba(0,0,0,0.75);
   user-select: none;
+  overflow-y: auto;
 `;
 
 const Title = styled.h2`
