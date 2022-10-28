@@ -28,6 +28,7 @@ const Container = styled.header`
   box-shadow: -2px 10px 26px -2px rgba(0,0,0,0.75);
   -webkit-box-shadow: -2px 10px 26px -2px rgba(0,0,0,0.75);
   -moz-box-shadow: -2px 10px 26px -2px rgba(0,0,0,0.75);
+  user-select: none;
 `;
 
 const Logo = styled.div`

@@ -32,6 +32,7 @@ const HomePageContent = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  user-select: none;
   h1{
     margin-top: 250px;
     font-size: 50px;

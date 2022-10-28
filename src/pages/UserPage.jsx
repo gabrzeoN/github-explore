@@ -6,14 +6,15 @@ import Header from "../components/Header";
 import UserInfo from "../components/UserInfo";
 import Repositories from "../components/Repositories";
 
+
 export default function UserPage() {
   return (
     <>
-      <Header/>
+      <Header />
       <Container>
         <UserPageContent>
-          <UserInfo/>
-          <Repositories/>
+          <UserInfo />
+          <Repositories />
         </UserPageContent>
         <Sidebar />
       </Container>
@@ -35,4 +36,5 @@ const UserPageContent = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  user-select: none;
 `
