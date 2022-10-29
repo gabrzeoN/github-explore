@@ -29,11 +29,11 @@ export default function Repositories() {
     <Container>
       {
         repositories ?
-          repositories.map((repo, i) => {
-            return <Repository key={i} />
+          repositories.map((repository, i) => {
+            return <Repository key={i} repository={repository} />
           })
           :
-          <h1>Não ha repositorio</h1>
+          <h1>This user has no repository yet!</h1>
       }
     </Container>
   );
@@ -41,4 +41,5 @@ export default function Repositories() {
 
 const Container = styled.div`
   margin: 100px;
+  width: 80%;
 `;

@@ -27,6 +27,7 @@ export default function FavoriteButton() {
     const newFav = favorites?.filter((fav) => {
       if(fav.login !== user.login) return true;
     });
+    localStorage.setItem("githubexplore_favorites", JSON.stringify([...newFav]));
     setFavorites([...newFav]);
     setIsFav(false);
   }
@@ -40,6 +41,7 @@ export default function FavoriteButton() {
   }
 
   function addFav(){
+    localStorage.setItem("githubexplore_favorites", JSON.stringify([...favorites, { login: user.login, avatar_url: user.avatar_url }]));
     setFavorites([...favorites, { login: user.login, avatar_url: user.avatar_url }]);
     setIsFav(true);
   }

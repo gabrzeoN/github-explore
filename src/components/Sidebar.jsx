@@ -1,11 +1,15 @@
 import styled from "styled-components";
+import StarIcon from '@mui/icons-material/Star';
 import Profiles from "./Profiles";
 
-export default function Sidebar(){
-  return(
+export default function Sidebar() {
+  return (
     <Container>
-      <Title>FAVORITES</Title>
-      <Profiles/>
+      <Title>
+        <StarIcon sx={{ fontSize: 30, marginTop: 2, color: "#ffff00" }} />
+        <h2>FAVORITES</h2>
+      </Title>
+      <Profiles />
     </Container>
   );
 }
@@ -21,15 +25,19 @@ const Container = styled.section`
   bottom: 0px;
   right: 0px;
   box-shadow: -12px 9px 34px -2px rgba(0,0,0,0.75);
-  -webkit-box-shadow: -12px 9px 34px -2px rgba(0,0,0,0.75);
-  -moz-box-shadow: -12px 9px 34px -2px rgba(0,0,0,0.75);
   user-select: none;
   overflow-y: auto;
 `;
 
-const Title = styled.h2`
+const Title = styled.div`
   display: flex;
-  font-size: 30px;
-  margin-top: 20px;
-  text-decoration: underline;
+  justify-content: center;
+  align-items: center;
+  h2{
+    margin-left: 10px;
+    font-size: 30px;
+    display: flex;
+    margin-top: 20px;
+    text-decoration: underline;
+  }
 `;

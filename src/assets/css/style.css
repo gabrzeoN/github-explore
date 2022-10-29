@@ -10,7 +10,8 @@
   --user-infos-background: #366e9f;
   --favorite-button: #4d5962;
   --favorite-button-active: #573668;
-  --main-font: white;
+  --repository-closed: #366e9f;
+  --repository-opened: #573668;
   --logo-font: 'Pacifico', cursive;
   --main-font: 'Lexend Deca', sans-serif;
   --transaction-background: white;
@@ -27,4 +28,5 @@ a {
 
 a:visited {
   text-decoration: none;
+  color: black;
 }

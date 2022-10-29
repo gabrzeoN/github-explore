@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { useContext, useState } from "react";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import PeopleIcon from '@mui/icons-material/People';
 
 import FavoriteButton from "./FavoriteButton";
 import { UserContext } from "../contexts/UserContext";
@@ -14,12 +17,21 @@ export default function UserInfo() {
       <Avatar src={avatar_url} alt="avatar" />
       <Infos>
         <h2>Welcome to {name}'s profile</h2>
-        <h1>{login}</h1>
-        <h3>{location}</h3>
-        <p>{bio}</p>
+        <Login>{login}</Login>
+        <Location>
+          <LocationOnIcon/>
+          <h3>{location}</h3>
+        </Location>
+        <Bio>{bio}</Bio>
         <Additionals>
-          <h4>followers: {followers}  - following: {following}</h4>
-          <h5>public repositories: {public_repos}</h5>
+          <Follow>
+            <PeopleIcon/>
+            <h4>followers: {followers}  - following: {following}</h4>
+          </Follow>
+          <Repo>
+            <MenuBookIcon/>
+            <h4>public repositories: {public_repos}</h4>
+          </Repo>
         </Additionals>
       </Infos>
       <FavoriteButton/>
@@ -61,20 +73,37 @@ const Infos = styled.div`
   }
 `;
 
-const Login = styled.img`
+const Login = styled.h1`
   
 `;
 
-const Location = styled.img`
+const Location = styled.div`
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  h3{
+    margin-left: 10px;
+  }
+`;
+
+const Bio = styled.p`
   
 `;
 
-const Bio = styled.img`
-  
+const Follow = styled.div`
+  display: flex;
+  align-items: center;
+  h4{
+    margin-left: 10px;
+  }
 `;
 
-const Follow = styled.img`
-  
+const Repo = styled.div`
+  display: flex;
+  align-items: center;
+  h4{
+    margin-left: 10px;
+  }
 `;
 
 const Additionals = styled.div`
@@ -86,9 +115,6 @@ const Additionals = styled.div`
   *{
     font-weight: bold;
     font-size: 20px;
-  }
-  h5{
-    
   }
 `;
 
