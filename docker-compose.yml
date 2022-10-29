@@ -10,7 +10,7 @@ services:
     container_name: nginx_app
     build: ./nginx
     ports:
-      - 3000:80
+      - 80:80
     volumes:
       - build_react:/var/www/html
     depends_on:
