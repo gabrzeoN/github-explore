@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import PeopleIcon from '@mui/icons-material/People';
@@ -10,7 +10,6 @@ import { UserContext } from "../contexts/UserContext";
 export default function UserInfo() {
   const { user } = useContext(UserContext);
   const { name, login, avatar_url, location, bio, followers, following, public_repos } = user;
-
 
   return (
     <Container>
@@ -117,4 +116,3 @@ const Additionals = styled.div`
     font-size: 20px;
   }
 `;
-

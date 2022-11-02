@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 
@@ -24,7 +25,6 @@ const Container = styled.section`
   margin-top: 100px;
   height: calc(100vh - 100px);
 `
-
 const HomePageContent = styled.div`
   background-color: var(--page-background);
   width: calc(100vw - 300px);

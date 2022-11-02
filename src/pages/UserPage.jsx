@@ -1,12 +1,9 @@
-
 import styled from "styled-components";
-import { useState } from "react";
 
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import UserInfo from "../components/UserInfo";
 import Repositories from "../components/Repositories";
-
 
 export default function UserPage() {
   return (
@@ -28,7 +25,7 @@ const Container = styled.section`
   position: relative;
   margin-top: 100px;
   height: calc(100vh - 100px);
-`
+`;
 
 const UserPageContent = styled.div`
   background-color: var(--page-background);
@@ -39,4 +36,4 @@ const UserPageContent = styled.div`
   align-items: center;
   user-select: none;
   overflow-y: auto;
-`
+`;

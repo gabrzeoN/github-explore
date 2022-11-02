@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useState } from "react";
 
 import githubRepo from "../services/githubRepo";
-import { UserContext } from "../contexts/UserContext";
 import Repository from "./Repository";
 import { useParams } from "react-router-dom";
 
@@ -22,7 +21,6 @@ export default function Repositories() {
       console.log(error.response.data);
       alert("Profile not found!");
     }
-
   }
 
   return (

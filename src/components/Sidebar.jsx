@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import StarIcon from '@mui/icons-material/Star';
+
 import Profiles from "./Profiles";
 
 export default function Sidebar() {

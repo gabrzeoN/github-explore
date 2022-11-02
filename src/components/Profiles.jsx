@@ -5,7 +5,7 @@ import { UserContext } from "../contexts/UserContext";
 import Profile from "./Profile";
 
 export default function Profiles() {
-  const { user, favorites, setFavorites } = useContext(UserContext);
+  const { favorites } = useContext(UserContext);
 
   return (
     <Container>

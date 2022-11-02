@@ -1,10 +1,9 @@
 import React, { useContext, useState } from "react";
-import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+
 import githubProfile from "../services/githubProfile";
 import { UserContext } from "../contexts/UserContext";
-import githubRepo from "../services/githubRepo";
-
 
 export default function Searchbar() {
   const [disabled, setDisabled] = useState(false);

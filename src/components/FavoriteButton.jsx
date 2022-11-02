@@ -69,5 +69,4 @@ const Container = styled.button`
     :
     "background-color: var(--favorite-button);"
   }}
-  
 `;

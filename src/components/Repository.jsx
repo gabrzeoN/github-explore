@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+
 export default function Repository({ repository }) {
   const [isOpen, setIsOpen] = useState(false);
   const {
@@ -12,8 +12,6 @@ export default function Repository({ repository }) {
     created_at,
   } = repository
 
-
-  console.log(repository);
   return (
     <Container>
       {
@@ -78,5 +76,4 @@ const Close = styled.div`
   background-color: var(--repository-closed);
   height: 100px;
   box-shadow: 1px 0px 150px -6px rgba(0,0,0,0.75);
-  
 `;

@@ -1,13 +1,12 @@
-import styled from "styled-components";
 import githubProfile from "../services/githubProfile";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
 
 export default function Profile({ favorite }){
-  const { user, setUser, favorites, setFavorites } = useContext(UserContext);
-  const { name, login, avatar_url, location, bio, followers, following, public_repos } = user;
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   async function goToProfile() {
